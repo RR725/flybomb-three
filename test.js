@@ -63,13 +63,14 @@ var cubesArrInfo = addRadomCubes(100);
 renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
 renderer.setSize(width, height);
 document.body.appendChild(renderer.domElement);
-// renderer.render(scene, camera);
+
+renderer.render(scene, camera);
 
 // var camera, scene, renderer;
 // var geometry, material, mesh;
 
 // init();
-animate();
+// animate();
 
 // function init() {
 
@@ -93,11 +94,11 @@ animate();
 
 // }
 
-function animate() {
-	requestAnimationFrame( animate );
+// function animate() {
+// 	requestAnimationFrame( animate );
 
-	cylinder.rotation.x += 0.001;
-	// cylinder.rotation.z += 0.02;
-	renderer.render( scene, camera );
+// 	cylinder.rotation.x += 0.001;
+// 	// cylinder.rotation.z += 0.02;
+// 	renderer.render( scene, camera );
 
-}
+// }

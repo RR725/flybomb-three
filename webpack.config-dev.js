@@ -7,7 +7,8 @@ let HtmlWebpackPlugin = require("html-webpack-plugin");
 
 let config = {
 	entry: {
-		main: "./test.js"
+		main: "./index.js",
+		three:"./components/line.js"
 	},
 	output: {
 		// publicPath:'http://push-res.mzres.com',
@@ -77,15 +78,15 @@ let config = {
 		// new ExtractTextPlugin("resources/push/dist/common.css?ver=2017"), //合并css文件
 		new HtmlWebpackPlugin({
 			//生成Html，自动把打包后的文件加到html中
-			title: "push",
+			title: "three",
 			inject: "body",
-			chunks: ["vender", "main", "push"],
+			chunks: ["vender", "main", "three"],
 			filename: "index.html", //打包后的文件
 			template: "template/test.html" //模板文件
 		}),
 		new CommonsChunkPlugin({
 			//把公共的文件打包
-			names: ["push", "vender"]
+			names: ["three", "vender"]
 		})
 	]
 };
