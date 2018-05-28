@@ -9,13 +9,21 @@
 		<meta name="description" content="">
 		<meta name="author" content="">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-	
+		<style>
+			*{margin:0;padding:0;}
+			ul,ol,li{list-style: none;}
+			.position{width: 100%;height: 40px; line-height: 40px; position: absolute; left:0; top:0;}
+			.opacity{z-index: 10; background: #000; opacity: .2;}
+			.nav{z-index: 100; color: #fff;}
+			.nav li{ margin-left: 10px; display: inline; }
+		</style>
 	
 	</head>
 
 	<body>
-        <div id="canvas-frame"></div>
-
+		<div class="position opacity"></div>
+        <div class="position nav" id="nav"></div>
+		<div id="canvas"></div>
 		
 	</body>
 

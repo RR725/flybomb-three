@@ -8,14 +8,15 @@ export default class Init {
 		this.width = width;
 		this.height = height;
 		this.renderer = new THREE.WebGLRenderer({
-			antialias: true
+			antialias: true,
 		});
 		this.camera = new THREE.PerspectiveCamera(45, width / height, 1, 10000);
 		this.scene = new THREE.Scene();
 	}
 	initThree() {
 		this.renderer.setSize(this.width, this.height);
-		document.body.appendChild(this.renderer.domElement);
+		document.getElementById('canvas').innerHTML='';
+		document.getElementById('canvas').appendChild(this.renderer.domElement);
 		this.renderer.setClearColor(0xffffff, 1.0);
 	}
 	initCamera() {

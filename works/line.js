@@ -4,25 +4,19 @@ import Init from "../components/init.js";
 import setLine from "../components/line.js";
 class Line extends Init {
 	initObject() {
-		let line = setLine({
+		let obj = {
 			scene: this.scene,
 			startPoint: [-100, 0, 100],
 			endPoint: [100, 0, -100],
 			startColor: 0xffffff,
 			endColor: 0x000000
-		});
-		let line1 = setLine({
-			scene: this.scene,
-			startPoint: [-100, 0, 100],
-			endPoint: [100, 0, -200],
-			startColor: 0xffffff,
-			endColor: 0x000000
-		});
-		this.scene.add(line);
-		this.scene.add(line1);
-		
+		};
+		for (let i = 1; i < 5; i++) {
+			obj.endPoint = [100, 0, -100 * i];
+			let line = setLine(obj);
+			this.scene.add(line);
+		}
 	}
 }
-let line=new Line();
-line.render();
-module.exports=line;
+let line = new Line();
+module.exports = line;
