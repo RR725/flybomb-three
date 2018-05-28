@@ -7,6 +7,14 @@ document.body.onload = function() {
 		{
 			id: "net",
 			name: "网格"
+		},
+		{
+			id: "animate",
+			name: "动画（相机转）"
+		},
+		{
+			id: "animate1",
+			name: "动画（物体转）"
 		}
 	];
 	let li = "";
@@ -20,6 +28,7 @@ document.body.onload = function() {
 			let { id, name } = data;
 			let fun = require("./" + data.id + ".js");
 			document.getElementById(data.id).onclick = function() {
+
 				fun.render();
 			};
 		})(data);

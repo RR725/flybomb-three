@@ -25,6 +25,13 @@ class NetTable extends Init {
 			line1.rotation.y = 90 * Math.PI / 180;
 			this.scene.add(line1);
 		}
+
+	}
+	animate() {
+
+		this.camera.rotation.z = this.camera.rotation.z + 1;//相机移动
+		this.renderer.render(this.scene, this.camera);
+		requestAnimationFrame(this.animate.bind(this));
 	}
 }
 let netTable = new NetTable();

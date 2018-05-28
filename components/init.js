@@ -11,10 +11,12 @@ export default class Init {
 			antialias: true,
 		});
 		this.camera = new THREE.PerspectiveCamera(45, width / height, 1, 10000);
+		
 		this.scene = new THREE.Scene();
 	}
 	initThree() {
 		this.renderer.setSize(this.width, this.height);
+
 		document.getElementById('canvas').innerHTML='';
 		document.getElementById('canvas').appendChild(this.renderer.domElement);
 		this.renderer.setClearColor(0xffffff, 1.0);
@@ -24,8 +26,8 @@ export default class Init {
 		this.camera.position.y = 1000;
 		this.camera.position.z = 0;
 		this.camera.up.x = 0;
-		this.camera.up.y = 0;
-		this.camera.up.z = 1;
+		this.camera.up.y = 1;
+		this.camera.up.z = 0;
 		this.camera.lookAt(new THREE.Vector3(0, 0, 0));
 	}
 	initLight() {
@@ -36,13 +38,16 @@ export default class Init {
 	initObject(){
 
 	}
+	animate(){
+
+	}
 	render() {
 		this.initThree();
 		this.initCamera();
 		this.initLight();
 		this.initObject();
-		
-		this.renderer.clear();
+		this.animate();
+		// this.renderer.clear();
 		this.renderer.render(this.scene, this.camera);
 		
 
